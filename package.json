@@ -1,0 +1,15 @@
+{
+  "name": "my-team-pofo",
+  "version": "1.0.0",
+  "description": "Responsive team website",
+  "main": "index.js",
+  "scripts": {
+    "sass": "node-sass -w scss/ -o dist/css/ --recursive"
+  },
+  "keywords": [],
+  "author": "akshay",
+  "license": "ISC",
+  "dependencies": {
+    "node-sass": "^4.13.0"
+  }
+}

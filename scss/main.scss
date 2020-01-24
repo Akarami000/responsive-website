@@ -1,0 +1,137 @@
+@import 'config';
+@import 'menu';
+@import 'mobile';
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    @include background;
+    background :$primary-color ;
+    color: #fff;
+    height:100%;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height:1.5;
+    animation : animate 10s ease-in-out infinite;
+}
+
+h1,h2,h3{
+    margin:0;
+    font-weight:400;
+
+    &.lg-heading{
+        font-size:6rem;
+
+    }
+    &.sm-heading{
+        margin-bottom: 2rem;
+        padding:0.2rem 1rem;
+        background: rgba(lighten($primary-color,2),0.6);
+        animation: type 10s steps(20);
+        overflow: hidden;
+        //to remove the word rap
+        white-space: nowrap;
+        border-right:4px solid #fff;
+        width:120ch;
+        font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+       
+    }
+}
+a{
+    color:#fff;
+    text-decoration:none;
+}
+header{
+    position:fixed;
+    z-index:2;
+    width:100%;
+}
+
+.text-secondary{
+    color:#fc9905;
+}
+main{
+    padding:4rem;
+    height:100%;
+
+    .icons{
+        margin-top: 1rem;
+        a{
+            padding:0.4rem; 
+            &:hover{
+                color:$secondary-color;
+                @include easeOut();
+            }
+        }
+
+    }
+    
+    &#home{
+        overflow: hidden;
+        h1{
+            margin-top:20vh;
+        }
+    }
+}
+
+@keyframes animate{
+0%,100%{
+    background-image: url(../img/bbb.jpg);
+}
+75%{
+    background-image: url(../img/bb.jpg);
+}
+50%{
+    background-image: url(../img/3.jpg);
+}
+25%{
+    background-image: url(../img/4.jpg);
+}
+ 
+}
+
+@keyframes type {
+    0%{
+        width: 0ch;
+    }
+    100%{
+        width:60ch;
+    }
+}
+// ///////////////////////////////////////////////////////////////////
+
+
+
+
+.container{
+    width: 1200px;
+    min-height: 500px;
+    margin:70px auto 0;
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.container .box{
+    position: relative;
+    width: 300px;
+    height: 300px;
+    background: #fc9905;
+    margin: 10px;
+    box-sizing: border-box;
+    display:inline-block;
+    border-radius:40%;
+
+    
+}
+
+.container .box .imgbox{
+    position: relative;
+}
+.container .box .imgbox img{
+    max-width: 100%;
+    width: 100%;
+    border-radius:40%;
+}
